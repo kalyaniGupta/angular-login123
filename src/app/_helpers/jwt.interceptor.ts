@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environment';
 import { AuthenticationService } from '../_services/authentication.service';
 
-
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
@@ -30,7 +29,7 @@ export class JwtInterceptor implements HttpInterceptor {
         },
       });
     }
-
+    console.log('request', request);
     return next.handle(request);
   }
 }
